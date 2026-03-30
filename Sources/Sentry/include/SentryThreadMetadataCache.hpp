@@ -66,8 +66,8 @@ namespace profiling {
             ThreadHandle::NativeHandle handle;
             ThreadMetadata metadata;
         };
-        std::vector<const ThreadHandleMetadataPair> threadMetadataCache_;
-        std::vector<const QueueMetadata> queueMetadataCache_;
+        std::vector<ThreadHandleMetadataPair> threadMetadataCache_;
+        std::vector<QueueMetadata> queueMetadataCache_;
     };
 
 } // namespace profiling

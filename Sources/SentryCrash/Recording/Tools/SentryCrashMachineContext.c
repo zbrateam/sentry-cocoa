@@ -33,6 +33,11 @@
 #include "SentryCrashSystemCapabilities.h"
 
 #include <mach/mach.h>
+#include <sys/ucontext.h>
+
+#ifdef __arm64__
+#    include <sys/_types/_ucontext64.h>
+#endif
 
 // #define SentryCrashLogger_LocalLevel TRACE
 #include "SentryCrashLogger.h"
