@@ -56,7 +56,10 @@ void sentrycrashmc_resumeEnvironment(thread_act_array_t threads, mach_msg_type_n
  * @param NAME The C identifier to give the pointer.
  */
 #define SentryCrashMC_NEW_CONTEXT(NAME)                                                            \
+    _Pragma("clang diagnostic push")                                                               \
+    _Pragma("clang diagnostic ignored \"-Wvla-extension\"")                                        \
     char sentrycrashmc_##NAME##_storage[sentrycrashmc_contextSize()];                              \
+    _Pragma("clang diagnostic pop")                                                                \
     struct SentryCrashMachineContext *NAME                                                         \
         = (struct SentryCrashMachineContext *)sentrycrashmc_##NAME##_storage
 
